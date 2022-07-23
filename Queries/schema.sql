@@ -12,13 +12,6 @@ last_name varchar
 gender varchar
 hire_date date
 
-Salaries
--
-emp_no int pk fk - Employees.emp_no
-salary int
-from_date date
-to_date date
-
 Managers
 -
 dept_no varchar pk fk - Departments.dept_no
@@ -29,7 +22,14 @@ to_date date
 Dept_Emp
 -
 emp_no int pk fk -< Employees.emp_no 
-dept_no varchar pk fk -< Departments.dept_no
+dept_no varchar
+from_date date
+to_date date
+
+Salaries
+-
+emp_no int pk fk - Employees.emp_no
+salary int
 from_date date
 to_date date
 
