@@ -12,6 +12,13 @@ last_name varchar
 gender varchar
 hire_date date
 
+Salaries
+-
+emp_no int pk fk - Employees.emp_no
+salary int
+from_date date
+to_date date
+
 Managers
 -
 dept_no varchar pk fk - Departments.dept_no
@@ -22,14 +29,7 @@ to_date date
 Dept_Emp
 -
 emp_no int pk fk -< Employees.emp_no 
-dept_no varchar
-from_date date
-to_date date
-
-Salaries
--
-emp_no int pk fk - Employees.emp_no
-salary int
+dept_no varchar pk fk -< Departments.dept_no
 from_date date
 to_date date
 
@@ -58,7 +58,7 @@ CREATE TABLE employees (
      PRIMARY KEY (emp_no)
 );
 
-CREATE TABLE managers (
+CREATE TABLE dept_manager (
 dept_no VARCHAR(4) NOT NULL,
     emp_no INT NOT NULL,
     from_date DATE NOT NULL,
@@ -93,7 +93,6 @@ CREATE TABLE titles (
   from_date DATE NOT NULL,
   to_date DATE NOT NULL,
   FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-  PRIMARY KEY (emp_no)
 );
 
 SELECT * FROM departments;
